@@ -269,6 +269,61 @@ body:not(.show-fields) .field-tag{display:none}
 .success .tick{width:72px;height:72px;border-radius:50%;background:var(--green);display:inline-flex;align-items:center;justify-content:center;margin-bottom:10px}
 .success .tick svg{width:40px;height:40px}
 
+
+/* ===== Look B · Bold: navy ink, square corners, green bands (all text ≥ 4.5:1) ===== */
+body.theme-bold{--radius:6px;--blue-tint:#EAF2F8;--shadow:0 2px 0 rgba(0,71,111,.12)}
+body.theme-bold .btn{border-radius:4px;text-transform:uppercase;letter-spacing:.04em;font-size:14px}
+body.theme-bold .chip{border-radius:4px}
+body.theme-bold header.site{border-bottom-width:6px}
+body.theme-bold nav.primary a{text-transform:uppercase;font-size:14px;letter-spacing:.05em}
+body.theme-bold .hero{background-color:var(--blue-ink)}
+body.theme-bold .hero::after{display:none}
+body.theme-bold .hero h1{font-family:var(--font);font-weight:700;letter-spacing:-.01em}
+body.theme-bold .eyebrow{background:var(--green);color:var(--ink);padding:4px 8px;border-radius:3px}
+body.theme-bold .section h2,body.theme-bold .h2,body.theme-bold .search-head h1,body.theme-bold .course-hero h1,body.theme-bold .event-hero h1{font-family:var(--font);font-weight:800;letter-spacing:-.01em}
+body.theme-bold .subject-grid a{border-left-width:8px;border-radius:4px}
+body.theme-bold .date-block{background:var(--blue-ink);color:#fff;border-radius:4px}
+body.theme-bold .cta-band{background:var(--blue-ink)}
+body.theme-bold .cta-band h2,body.theme-bold .cta-band p{color:#fff}
+body.theme-bold .cta-band .btn-primary{background:var(--green);color:var(--ink)}
+body.theme-bold .stats div{background:var(--green-tint);border-left:6px solid var(--green)}
+body.theme-bold .card,body.theme-bold .img,body.theme-bold .video,body.theme-bold .kv div,body.theme-bold input,body.theme-bold select,body.theme-bold textarea{border-radius:4px}
+body.theme-bold .steps li::before,body.theme-bold .pay-type .ic{border-radius:4px}
+body.theme-bold .badge{border-radius:3px;text-transform:uppercase;font-size:11px}
+/* ===== Look C · Warm: off-white paper, larger slab headings, soft shapes ===== */
+body.theme-warm{--bg:#FBF8F3;--line:#E6DFD3;--radius:18px;--blue-tint:#EEF4F2;--green-tint:#F2F6E9;--shadow:0 6px 20px rgba(60,50,30,.08)}
+body.theme-warm #app{background:#FFFDFA}
+body.theme-warm .section h2,body.theme-warm .h2{font-size:30px;letter-spacing:-.01em}
+body.theme-warm .hero{background:#FFFDFA!important;color:var(--ink);padding-bottom:40px}
+body.theme-warm .hero::after{background:var(--blue);opacity:.08;width:420px;height:420px;right:-120px;top:-160px}
+body.theme-warm .hero h1{color:var(--blue-ink);font-size:36px}
+body.theme-warm .hero p{color:var(--ink-2)}
+body.theme-warm .hero .eyebrow{color:var(--green-dark)}
+body.theme-warm .hero .dots button{border-color:var(--blue-ink)}
+body.theme-warm .hero .dots button[aria-current=true]{background:var(--blue-ink)}
+body.theme-warm .hero .btn-outline{background:#fff!important;color:var(--blue-ink)!important;border-color:var(--blue)!important}
+body.theme-warm .hero .photo{display:block;height:200px;border-radius:20px;background:var(--hero-img) center/cover;margin:0 0 18px}
+body.theme-warm .search-panel{margin-top:-10px}
+body.theme-warm .search-panel .card{border:0;background:var(--blue-ink);color:#fff}
+body.theme-warm .search-panel h2{color:#fff}
+body.theme-warm .search-panel .chip{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35);color:#fff}
+body.theme-warm .search-panel .btn-primary{background:var(--green);color:var(--ink)}
+body.theme-warm .subject-grid a{border:0;background:var(--bg);border-radius:14px;padding:18px}
+body.theme-warm .subject-grid a::before{content:"";display:block;width:34px;height:4px;border-radius:2px;background:var(--green);margin-bottom:6px}
+body.theme-warm .btn{border-radius:14px}
+body.theme-warm .date-block{background:var(--green);color:var(--ink);border-radius:14px}
+body.theme-warm .cta-band{background:var(--blue-ink)}
+body.theme-warm .cta-band h2,body.theme-warm .cta-band p{color:#fff}
+body.theme-warm .cta-band .btn-primary{background:var(--green);color:var(--ink)}
+body.theme-warm .stats div{background:#fff;border:1px solid var(--line)}
+body.theme-warm header.site{border-bottom-color:var(--line)}
+body.theme-warm nav.primary a[aria-current="page"],body.theme-warm nav.primary a:hover{border-bottom-color:var(--green)}
+body.theme-warm .event-hero,body.theme-warm .course-hero,body.theme-warm .search-head{background:var(--bg)}
+body.theme-warm .course-hero h1{font-size:30px}
+.hero .photo{display:none}
+@container app (min-width: 640px){ body.theme-warm .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center} body.theme-warm .hero .photo{grid-column:2;grid-row:1/span 5;height:320px;margin:0} body.theme-warm .hero>*:not(.photo){grid-column:1} }
+@container app (min-width: 1024px){ body.theme-warm .hero h1{font-size:46px} }
+
 /* ===== Container queries: tablet ≥ 640px ===== */
 @container app (min-width: 640px){
   .topbar .links{display:flex}
@@ -330,12 +385,19 @@ body:not(.show-fields) .field-tag{display:none}
     <button type="button" data-dev="tablet" aria-pressed="false">Tablet</button>
     <button type="button" data-dev="desktop" aria-pressed="false">Desktop</button>
   </div>
+  <div class="group" role="group" aria-label="Look and feel">
+    <button type="button" data-theme="" aria-pressed="true" title="Clean, blue-led: the direction shown in the bid">Look A · Classic</button>
+    <button type="button" data-theme="theme-bold" aria-pressed="false" title="Bolder: navy, square corners, green section bands">Look B · Bold</button>
+    <button type="button" data-theme="theme-warm" aria-pressed="false" title="Warm, editorial: off-white, larger headings, soft shapes">Look C · Warm</button>
+  </div>
   <div class="group" role="group" aria-label="Go to page">
     <button type="button" data-go="#/">Home</button>
     <button type="button" data-go="#/search">Search</button>
     <button type="button" data-go="#/course/374">Course</button>
     <button type="button" data-go="#/events">Events</button>
     <button type="button" data-go="#/pay">Payments</button>
+    <button type="button" data-go="#/college">College</button>
+    <button type="button" data-go="#/contact">Contact</button>
   </div>
   <span class="spacer"></span>
   <div class="group">
@@ -358,7 +420,7 @@ body:not(.show-fields) .field-tag{display:none}
   <a class="skip" href="#main">Skip to main content</a>
   <div class="topbar">
     <a href="tel:01245265611">📞 01245 265611</a>
-    <div class="links"><a href="#/" data-nav>Students</a><a href="#/" data-nav>Parents &amp; carers</a><a href="#/" data-nav>Employers</a><a href="#/pay" data-nav>Make a payment</a><a href="#/" data-nav>Log in</a></div>
+    <div class="links"><a href="#/for/students" data-nav>Students</a><a href="#/for/parents" data-nav>Parents &amp; carers</a><a href="#/for/employers" data-nav>Employers</a><a href="#/pay" data-nav>Make a payment</a><a href="#/" onclick="toast('Student and staff login (existing CEDAR / remote access).');return false;">Log in</a></div>
   </div>
   <header class="site">
     <div class="hdr">
@@ -371,10 +433,10 @@ body:not(.show-fields) .field-tag{display:none}
       <ul>
         <li><a href="#/search" data-nav="courses">Courses</a></li>
         <li><a href="#/events" data-nav="events">News &amp; Events</a></li>
-        <li><a href="#/" data-nav>Our College</a></li>
-        <li><a href="#/" data-nav>Support</a></li>
+        <li><a href="#/college" data-nav="college">Our College</a></li>
+        <li><a href="#/support" data-nav="support">Support</a></li>
         <li><a href="#/pay" data-nav="pay">Make a payment</a></li>
-        <li><a href="#/" data-nav>Contact us</a></li>
+        <li><a href="#/contact" data-nav="contact">Contact us</a></li>
       </ul>
     </nav>
   </header>
@@ -384,12 +446,12 @@ body:not(.show-fields) .field-tag{display:none}
     <ul>
       <li><a href="#/search">Courses <span>›</span></a></li>
       <li><a href="#/events">News &amp; Events <span>›</span></a></li>
-      <li><a href="#/">Our College <span>›</span></a></li>
-      <li><a href="#/">Support <span>›</span></a></li>
+      <li><a href="#/college">Our College <span>›</span></a></li>
+      <li><a href="#/support">Support <span>›</span></a></li>
       <li><a href="#/pay">Make a payment <span>›</span></a></li>
-      <li><a href="#/">Contact us <span>›</span></a></li>
+      <li><a href="#/contact">Contact us <span>›</span></a></li>
     </ul>
-    <div class="sub"><a href="#/search">Apply now</a><a href="#/">Download prospectus</a><a href="#/">Students · Parents &amp; carers · Employers</a><a href="#/">Log in</a></div>
+    <div class="sub"><a href="#/search">Apply now</a><a href="#/college">Download prospectus</a><a href="#/for/students">Students</a><a href="#/for/parents">Parents &amp; carers</a><a href="#/for/employers">Employers</a></div>
     <div class="dfoot">Moulsham Street &amp; Princes Road campuses · <a href="tel:01245265611">01245 265611</a></div>
   </div>
 
@@ -399,8 +461,8 @@ body:not(.show-fields) .field-tag{display:none}
     <img class="flogo" id="logoFoot" src="" alt="Chelmsford College">
     <div class="cols">
       <div><h3>Moulsham Street Campus</h3>102 Moulsham Street, Chelmsford CM2 0JQ<br><a href="tel:01245265611">01245 265611</a></div>
-      <div><h3>Princes Road Campus</h3>Princes Road, Chelmsford CM2 9DE<br><a href="#/">Map &amp; directions</a></div>
-      <div><h3>Quick links</h3><a href="#/search">Prospectus &amp; applications</a><br><a href="#/">College calendar</a><br><a href="#/">Vacancies</a><br><a href="#/">Policies &amp; values</a></div>
+      <div><h3>Princes Road Campus</h3>Princes Road, Chelmsford CM2 9DE<br><a href="#/contact">Map &amp; directions</a></div>
+      <div><h3>Quick links</h3><a href="#/search">Prospectus &amp; applications</a><br><a href="#/college">About the College</a><br><a href="#/support">Support &amp; wellbeing</a><br><a href="#/contact">Contact us</a></div>
       <div><h3>Follow us</h3><div class="social"><span>f</span><span>in</span><span>X</span><span>TT</span><span>IG</span></div></div>
     </div>
     <div class="legal"><span>© Chelmsford College 2026</span><a href="#/">Accessibility statement</a><a href="#/">Privacy policy</a><a href="#/">Cookie policy</a><a href="#/">Ofsted report</a></div>
@@ -473,7 +535,8 @@ function pageHome(){
   const subs=[...new Set(COURSES.map(c=>c.C_SECTION))].map(s=>({id:s,name:SECTIONS[s],n:COURSES.filter(c=>c.C_SECTION===s).length})).sort((a,b)=>a.name.localeCompare(b.name));
   const upcoming=EVENTS.filter(e=>new Date(e.date)>=TODAY).slice(0,3);
   return `
-  <section class="hero" aria-roledescription="carousel" aria-label="Key messages" style="background-image:linear-gradient(100deg,rgba(0,71,111,.94) 0%,rgba(0,100,165,.82) 45%,rgba(0,122,197,.25) 100%),url(${IMG.learners})">
+  <section class="hero" aria-roledescription="carousel" aria-label="Key messages" style="--hero-img:url(${IMG.learners});background-image:linear-gradient(100deg,rgba(0,71,111,.94) 0%,rgba(0,100,165,.82) 45%,rgba(0,122,197,.25) 100%),var(--hero-img)">
+    <div class="photo" role="img" aria-label="Students on campus"></div>
     <span class="eyebrow">Showcase Information Event · Wed 4 November, 6pm–8.30pm</span>
     <h1>Find the course that gets you where you want to go</h1>
     <p>One of the leading colleges in Essex. Full-time courses, T Levels, apprenticeships and adult learning across two Chelmsford campuses.</p>
@@ -764,6 +827,74 @@ function pagePayDone(){
   <div><h2 class="h2" style="font-size:18px">What happens next</h2><p style="color:var(--ink-2)">${s.kind==="deposit"?"Your place is secured. Enrolment details will be sent to you in August.":s.kind==="materials"?"Your tutor will confirm when kit and materials are ready to collect.":"The trip organiser has been notified. Consent forms, if needed, will follow by email."}</p><p><a class="btn btn-outline" href="#/pay">Make another payment</a> <a class="btn btn-ghost" href="#/">Back to home</a></p></div></div></div>`;
 }
 
+
+/* ---- Content pages (Our College, Support, Contact, audiences) ---- */
+function contentHero(crumb, title, lead, img){ return `<div class="event-hero"><div class="wrap" style="padding:0"><nav class="crumbs" aria-label="Breadcrumb" style="padding:0 0 8px"><a href="#/">Home</a><span>›</span>${crumb}</nav><h1>${title}</h1><p class="lead" style="margin:0">${lead}</p></div></div>${img?`<div class="wrap" style="padding-top:16px"><div class="img" role="img" aria-label="${esc(img[1])}" ${bg(img[0])} style="height:220px;border-radius:var(--radius)"><span>${esc(img[1])}</span></div></div>`:""}`; }
+function tiles(items){ return `<div class="grid subject-grid">${items.map(([h,t,href])=>`<a href="${href||"#/"}" ${href?"":'onclick="toast(\'Page managed in the CMS by Marketing.\');return false;"'}>${esc(h)}<small>${esc(t)}</small></a>`).join("")}</div>`; }
+function pageCollege(){
+  return contentHero("Our College","Our College","One of the leading colleges in Essex: two campuses in Chelmsford, around 3,500 students and 400 staff, and courses from entry level to higher technical qualifications.",["learners","Students on the Moulsham Street campus"]) + `
+  <div class="wrap section">
+    <div class="grid two">
+      <div><h2>Two campuses, one college</h2>
+        <p><strong>Moulsham Street</strong> is the main campus: Business, IT and Travel, Childcare and Health & Social Care, Applied Science, Sport and Public Services, plus the learning resource centre, the Igloo and student services.</p>
+        <p><strong>Princes Road</strong> houses the practical vocational areas: Construction, Electrical and Engineering workshops, the Princes Salons for Hair & Beauty, the training kitchens and the creative studios.</p>
+        <p><a class="btn btn-outline btn-sm" href="#/contact">Map &amp; directions</a> <a class="btn btn-ghost btn-sm" href="#/" onclick="toast('Opens the 360° campus tour.');return false;">360° campus tour</a></p></div>
+      <div><h2>Principal's welcome</h2><p>"Whether you are leaving school, returning to learning or training your workforce, Chelmsford College exists to unlock potential. Our tutors are industry people, our facilities match the workplace, and our students leave with qualifications employers trust."</p><p class="muted">Replace with the Principal's own words and photo from the CMS.</p></div>
+    </div>
+    <h2 style="margin-top:28px">Find out more</h2>
+    ${tiles([["Campuses","Facilities, tours, parking","#/contact"],["Leadership team","Senior leaders and governors"],["Ofsted report","Latest inspection outcome"],["History timeline","From 1893 to today"],["Policies & values","EDI, British values, safeguarding"],["Work for us","Vacancies and benefits"],["Sustainability","Green skills and the campus plan"],["Prospectus","Download or order a copy","#/search"]])}
+    <div class="grid stats" style="margin-top:28px"><div><b>1893</b><span>founded</span></div><div><b>3,500</b><span>students</span></div><div><b>400</b><span>staff</span></div><div><b>Good</b><span>Ofsted rating</span></div></div>
+  </div>`;
+}
+function pageSupport(){
+  return contentHero("Support","Support &amp; wellbeing","Everyone gets a named tutor and a doorway to support: money, travel, additional needs, wellbeing and careers.",["students","Student services at Moulsham Street"]) + `
+  <div class="wrap section">
+    <div class="alert"><strong>Need to talk to someone today?</strong> Student Services is open 8.30am to 5pm on both campuses, or call <a href="tel:01245265611">01245 265611</a>. Out of hours, Togetherall is available 24/7 to all students.</div>
+    <h2>How we can help</h2>
+    ${tiles([["Moving on to College","Transition support for Year 11s"],["SEND support","Learning support and EHCP reviews"],["Financial support","Bursaries, free meals, kit and travel"],["Travel schemes","Bus passes and discounted travel"],["Careers Advice Zone","Impartial advice, CVs, UCAS"],["Exam information","Timetables, access arrangements, results"],["Chaplaincy & wellbeing","Counselling, chaplaincy, Togetherall"],["FAQs","Answers to the most common questions"]])}
+    <div class="grid two" style="margin-top:28px">
+      <div class="card" style="padding:16px"><h2 class="h2" style="font-size:20px">Financial support</h2><p>If your household income is under £31,000 you may be eligible for the 16–19 Bursary: free meals, travel, course kit and trips. Adults may be eligible for an Advanced Learner Loan or the Adult Skills Hub fund.</p><a class="btn btn-primary btn-sm" href="#/" onclick="toast('Opens the bursary application form.');return false;">Check if you qualify</a></div>
+      <div class="card" style="padding:16px"><h2 class="h2" style="font-size:20px">Careers Advice Zone</h2><p>Drop in Monday to Friday for impartial advice on courses, apprenticeships, university and jobs. Book a one-to-one or use the Pathways tool to see where a course can take you.</p><a class="btn btn-outline btn-sm" href="#/search">Explore pathways</a></div>
+    </div>
+  </div>`;
+}
+function pageContact(){
+  return contentHero("Contact us","Contact us","Call, email, or visit either campus. We reply to enquiries within one working day.") + `
+  <div class="wrap section">
+    <div class="grid two">
+      <div>
+        <h2>Get in touch</h2>
+        <div class="kv" style="margin-bottom:16px">
+          <div><b>Switchboard</b><span><a href="tel:01245265611">01245 265611</a></span></div>
+          <div><b>Course enquiries</b><span><a href="#/">information@chelmsford.ac.uk</a></span></div>
+          <div><b>Careers advice</b><span><a href="#/">careersadvicezone@chelmsford.ac.uk</a></span></div>
+          <div><b>Opening hours</b><span>Mon–Thu 8.30am–5pm · Fri 8.30am–4.30pm</span></div>
+        </div>
+        <h2 class="h2" style="font-size:20px">Moulsham Street Campus</h2><p>102 Moulsham Street, Chelmsford CM2 0JQ<br>10 minutes' walk from Chelmsford station. Limited visitor parking; bus routes 2, 9 and 36 stop outside.</p>
+        <h2 class="h2" style="font-size:20px">Princes Road Campus</h2><p>Princes Road, Chelmsford CM2 9DE<br>Free car park; bus route 52 and the College shuttle between campuses every 20 minutes.</p>
+        <div class="img" role="img" aria-label="Map showing both campuses" style="height:180px;border-radius:var(--radius);background:linear-gradient(135deg,#E6F3FB,#cfe6f5)"><span style="background:var(--blue);">Interactive map (Google Maps / OpenStreetMap embed)</span></div>
+      </div>
+      <div class="card" style="padding:16px" id="contactCard">
+        <h2 class="h2" style="font-size:20px">Send us a message</h2>
+        <form id="contactForm" novalidate>
+          <div class="form-row"><label for="cn2">Your name</label><input type="text" id="cn2" autocomplete="name" required></div>
+          <div class="form-row"><label for="ce2">Email address</label><input type="email" id="ce2" autocomplete="email" required></div>
+          <div class="form-row"><label for="ct2">What is it about?</label><select id="ct2"><option>A course or applying</option><option>An existing application</option><option>Support or wellbeing</option><option>Employers and apprenticeships</option><option>Something else</option></select></div>
+          <div class="form-row"><label for="cm2">Your message</label><textarea id="cm2" rows="5" required></textarea></div>
+          <label class="check"><input type="checkbox" required> <span>I agree to the College storing my details to answer this enquiry (<a href="#/">privacy notice</a>).</span></label>
+          <button class="btn btn-primary btn-block" type="submit" style="margin-top:8px">Send message</button>
+        </form>
+      </div>
+    </div>
+  </div>`;
+}
+const AUDIENCES={
+ students:{t:"Students",l:"Everything current and future students need: courses, applying, support, travel and life at College.",img:["learners","Students on campus"],tiles:[["Find a course","Full-time, T Levels, apprenticeships","#/search"],["Apply or accept your offer","Applications for September 2027","#/search"],["Events & taster days","Showcase, taster days, inductions","#/events"],["Support & wellbeing","Money, travel, SEND, counselling","#/support"],["Make a payment","Deposits, kit, trips","#/pay"],["Student login","CEDAR and remote access"]]},
+ parents:{t:"Parents &amp; carers",l:"How College works, who to contact, and how to help your young person choose the right course.",img:["students","A parent and student at an open event"],tiles:[["Showcase information events","Visit both campuses","#/event/1"],["Parents' induction evening","For new full-time students","#/event/3"],["Financial support","Bursaries, free meals, travel","#/support"],["Pay a fee or trip","On behalf of a student","#/pay"],["Safeguarding","Who to contact and how we keep students safe"],["Term dates & calendar","The College year"]]},
+ employers:{t:"Employers",l:"Apprenticeships, T Level industry placements, Skills Bootcamps and bespoke training for your workforce.",img:["carpentry","Industry placement in a construction workshop"],tiles:[["Apprenticeships","Recruit or upskill with us"],["T Level industry placements","Host a student for 45 days"],["Skills Bootcamps","Fully funded short courses"],["Commercial & AI training","Bespoke courses for your team"],["Clean Energy Jobs Fair","Meet our students","#/event/6"],["Contact the employer team","employers@chelmsford.ac.uk","#/contact"]]},
+};
+function pageAudience(k){ const a=AUDIENCES[k]; if(!a) return pageHome(); return contentHero(a.t,a.t,a.l,a.img)+`<div class="wrap section"><h2>Quick links</h2>${tiles(a.tiles)}</div>`; }
+
 /* ========= ROUTER ========= */
 function render(){
   const p=path(); let html=""; let nav="";
@@ -777,6 +908,10 @@ function render(){
   else if(p==="/pay/card"){ html=pagePayCard(); nav="pay"; }
   else if(p==="/pay/done"){ html=pagePayDone(); nav="pay"; }
   else if(p.startsWith("/pay/")){ html=pagePayDetails(p.split("/")[2]); nav="pay"; }
+  else if(p==="/college"){ html=pageCollege(); nav="college"; }
+  else if(p==="/support"){ html=pageSupport(); nav="support"; }
+  else if(p==="/contact"){ html=pageContact(); nav="contact"; }
+  else if(p.startsWith("/for/")){ html=pageAudience(p.split("/")[2]); }
   else { html=pageHome(); }
   $("#main").innerHTML=html;
   document.querySelectorAll("nav.primary a").forEach(a=>{ if(a.dataset.nav===nav&&nav) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
@@ -794,6 +929,7 @@ function bindPage(){
   const mo=$("#month"); if(mo) mo.addEventListener("change",()=>{ const p=qs(); if(mo.value) p.set("month",mo.value); else p.delete("month"); go("#/events?"+p.toString()); });
   const bf=$("#bookForm"); if(bf) bf.addEventListener("submit",e=>{e.preventDefault(); if(!bf.checkValidity()){ bf.reportValidity(); return; } $("#bookCard").innerHTML=`<div class="success"><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#1B2430" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></div><h2 class="h2" style="font-size:20px">You're booked in</h2><p>Thanks ${esc(bf.name.value||"")}. We've emailed your confirmation and a QR code to show on the day.</p><p><a class="btn btn-outline btn-sm" href="#/events">Back to events</a></p></div>`; $("#bookCard").focus(); });
   const pf=$("#payForm"); if(pf) pf.addEventListener("submit",e=>{e.preventDefault(); const s=state.pay; s.payer=pf.payer.value; s.sname=pf.sname.value.trim(); s.sdob=pf.sdob.value.trim(); s.pemail=pf.pemail.value.trim(); s.course=pf.course?pf.course.value:""; s.item=pf.item?pf.item.value:""; const errs=[]; if(!s.sname) errs.push("Enter the student's full name."); if(!s.sdob) errs.push("Enter the student's date of birth."); if(pf.course&&!s.course) errs.push("Choose a course."); if(pf.item&&!s.item) errs.push("Choose a trip or item."); if(!/@/.test(s.pemail)) errs.push("Enter a valid email address."); const eb=$("#formErr"); if(errs.length){ eb.style.display="block"; eb.innerHTML="<strong>There is a problem</strong><ul style='margin:6px 0 0;padding-left:18px'>"+errs.map(x=>`<li>${x}</li>`).join("")+"</ul>"; eb.focus(); return; } go("#/pay/review"); });
+  const ctf=$("#contactForm"); if(ctf) ctf.addEventListener("submit",e=>{e.preventDefault(); if(!ctf.checkValidity()){ ctf.reportValidity(); return; } $("#contactCard").innerHTML=`<div class="success"><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#1B2430" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></div><h2 class="h2" style="font-size:20px">Message sent</h2><p>Thanks. We'll reply within one working day. Reference CC-ENQ-${1000+Math.floor(Math.random()*8999)}.</p></div>`; });
   const cf=$("#cardForm"); if(cf) cf.addEventListener("submit",e=>{e.preventDefault(); if(!cf.checkValidity()){ cf.reportValidity(); return; } const b=cf.querySelector("button[type=submit]"); b.disabled=true; b.textContent="Processing…"; setTimeout(()=>go("#/pay/done"),900); });
 }
 
@@ -811,6 +947,7 @@ function updateNotes(){ const p=path(); const k=p==="/"?"/":Object.keys(NOTES).f
 /* ========= Presenter + chrome ========= */
 document.querySelectorAll("#presenter [data-dev]").forEach(b=>b.addEventListener("click",()=>{ document.querySelectorAll("#presenter [data-dev]").forEach(x=>x.setAttribute("aria-pressed","false")); b.setAttribute("aria-pressed","true"); $("#frame").className=b.dataset.dev; }));
 document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>go(b.dataset.go)));
+document.querySelectorAll("#presenter [data-theme]").forEach(b=>b.addEventListener("click",()=>{ document.querySelectorAll("#presenter [data-theme]").forEach(x=>x.setAttribute("aria-pressed","false")); b.setAttribute("aria-pressed","true"); document.body.classList.remove("theme-bold","theme-warm"); if(b.dataset.theme) document.body.classList.add(b.dataset.theme); }));
 $("#notesBtn").addEventListener("click",()=>{ const n=$("#notes"); const o=!n.classList.contains("open"); n.hidden=false; n.classList.toggle("open",o); $("#notesBtn").setAttribute("aria-expanded",o); });
 $("#notesClose").addEventListener("click",()=>{ $("#notes").classList.remove("open"); $("#notesBtn").setAttribute("aria-expanded","false"); });
 $("#fieldsBtn").addEventListener("click",()=>{ const on=document.body.classList.toggle("show-fields"); $("#fieldsBtn").setAttribute("aria-pressed",on); });
